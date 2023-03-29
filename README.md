@@ -1,4 +1,9 @@
 # BSE-Nepgop_10-Project
+Planning and Design: The first step in creating a website is to plan and design it. Decide on the features and functionality you want to include, and create a wireframe or mockup of the website.
+
+Setup Flask Web Framework: Flask is a Python web framework that can be used to create web applications. Install Flask using pip and set up a basic Flask application.
+
+Create Database: Create a SQL database to store the information about the houses, landlords, and tenants. You can use 
 SQLite or any other SQL database of your choice.
 
 Create User Authentication: Create a user authentication system to allow landlords and tenants to sign up and log in to the website. You can use Flask-Login or any other authentication library of your choice.
