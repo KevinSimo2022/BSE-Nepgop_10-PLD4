@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}" />
 		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css')}}" /></noscript>
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 	</head>
 	<body class="is-preload">
 
@@ -47,7 +48,7 @@
 										or any other type of property to afford them securely and with trustworthiness <br />
 										by linking them to the appropriate owners.</p>
 								</header>
-								<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
+								<div class="image main"><img src="{{url_for('static', filename='images/pic01.jpg')}}"/></div>
 								<p>We are driven by a desire to assist people, particularly students, who struggle to rent and access suitable housing
                                      options in and around Kigali and close to their schools since we have observed that occasionally, 
                                      students fall victim to scams and because they are unaware of the location, they wind up spending more money than they
