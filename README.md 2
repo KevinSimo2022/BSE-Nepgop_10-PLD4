@@ -1,0 +1,49 @@
+You can link your SQL database to your Python Flask website by using an Object-Relational Mapping (ORM) library such as SQLAlchemy. SQLAlchemy provides an easy-to-use interface for creating, reading, updating, and deleting data in your database, and it allows you to interact with databases using Python code.
+
+Here are the basic steps to link your SQL database to your Python Flask website using SQLAlchemy:
+
+Install SQLAlchemy - You can install SQLAlchemy using pip by running the following command:
+pip install SQLAlchemy
+Create a database engine - You need to create a database engine to connect to your database. The engine is responsible for managing connections to the database and executing SQL commands. You can create an engine by using the create_engine() function from SQLAlchemy and passing in the connection string for your database. For example, if you are using SQLite, you could create an engine like this:
+python
+from sqlalchemy import create_engine
+
+engine = create_engine('sqlite:///database.db')
+This creates an engine that connects to a SQLite database named database.db in the current directory.
+
+Define your database models - You need to define your database models using Python classes that inherit from the db.Model class from SQLAlchemy. Each class represents a table in your database, and the attributes of the class represent the columns in the table. For example, here is a simple database model for a user table:
+python
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+
+    def __repr__(self):
+        return '<User %r>' % self.username
+This defines a User model with three columns: id, username, and email.
+
+Initialize the Flask app with the database - You need to initialize your Flask app with the database by creating an instance of the SQLAlchemy class and passing in your Flask app object. For example:
+python
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+db = SQLAlchemy(app)
+This creates a Flask app and initializes a SQLAlchemy instance with the app.
+
+Create database tables - You need to create your database tables by running the create_all() method of your SQLAlchemy instance. For example:
+python
+db.create_all()
+This creates all the tables defined in your database models.
+
+Use the database in your Flask app - You can use the database in your Flask app by creating instances of your database models and using them to interact with the database. For example, you could add a new user to the database like this:
+python
+new_user = User(username='john', email='john@example.com')
+db.session.add(new_user)
+db.session.commit()
+This creates a new User instance, adds it to the session, and commits the session to the database.
