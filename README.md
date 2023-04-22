@@ -18,4 +18,4 @@ Integration with Google Maps: Integrate Google Maps to show the location of the 
 
 Host the website: Host the website on a server, either locally or on a web hosting service, and make it publicly accessible.
 
-Overall, building a website in Python for house renting opportunities in Rwanda for students with Python and SQL features is a complex task that requires a good understanding of web development and database management. You will need to use various libraries and frameworks, such as Flask, SQLAlchemy, and Google Maps API, to create a fully functional website.
+Overall, building a website in Python for house renting opportunities in Rwanda, For students with Python and SQL features is a complex task that requires a good understanding of web development and database management. You will need to use various libraries and frameworks, such as Flask, SQLAlchemy, and Google Maps API, to create a fully functional website.
